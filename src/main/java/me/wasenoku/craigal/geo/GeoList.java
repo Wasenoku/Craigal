@@ -21,20 +21,46 @@ package me.wasenoku.craigal.geo;
 
 
 /**
- * Bundles craigslist site information together so
- * that future queries are more efficient.
+ * Simple enum that contains a list of ISO regions that
+ * this application is able to scrape locations from.
  *
  * @author Wasenoku
  * @version 1.0
  * @since 1.0
  */
-
-public class Bundle
+public enum GeoList
 {
-    private final GeoList list;
+    US, EU, AU;
 
-    public Bundle(GeoList list)
+
+
+
+
+    /**
+     * Base URL used for building subsequent ISO region URLs.
+     */
+    private static final String BASE_URL = "https://geo.craigslist.org/iso/";
+
+
+
+
+
+    /**
+     * ISO region url built from the type name itself
+     */
+    private final String url = GeoList.BASE_URL + this.name().toLowerCase();
+
+
+
+
+
+    /**
+     * Return the ISO region's URL.
+     *
+     * @return the ISO region URL
+     */
+    public String getUrl()
     {
-        this.list = list;
+        return this.url;
     }
 }
