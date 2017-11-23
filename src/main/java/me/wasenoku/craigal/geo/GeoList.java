@@ -30,7 +30,7 @@ package me.wasenoku.craigal.geo;
  */
 public enum GeoList
 {
-    US, EU, AU;
+    AU,BR,CA,CH,DE,ES,FR,GK,IL,IN,JP,NZ,PH,RU,US;
 
 
 
